@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="20%p"
+    android:horizontalGap="5dp"
+    android:keyHeight="60dp">
+    <Row>
+        <Key android:codes="69" android:keyLabel="ק" android:keyOutputText="ק" android:keyEdgeFlags="left"/>
+        <Key android:codes="82" android:keyLabel="ר" android:keyOutputText="ר"/>
+        <Key android:codes="84" android:keyLabel="א" android:keyOutputText="א"/>
+        <Key android:codes="89" android:keyLabel="ט" android:keyOutputText="ט"/>
+        <Key android:codes="85" android:keyLabel="ו" android:keyOutputText="ו"/>
+        <Key android:codes="73" android:keyLabel="ן" android:keyOutputText="ן"/>
+        <Key android:codes="79" android:keyLabel="ם" android:keyOutputText="ם"/>
+        <Key android:codes="80" android:keyLabel="פ" android:keyOutputText="פ" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="65" android:keyLabel="ש" android:keyOutputText="ש" android:keyEdgeFlags="left"/>
+        <Key android:codes="83" android:keyLabel="ד" android:keyOutputText="ד"/>
+        <Key android:codes="68" android:keyLabel="ג" android:keyOutputText="ג"/>
+        <Key android:codes="70" android:keyLabel="כ" android:keyOutputText="כ"/>
+        <Key android:codes="71" android:keyLabel="ע" android:keyOutputText="ע"/>
+        <Key android:codes="72" android:keyLabel="י" android:keyOutputText="י"/>
+        <Key android:codes="74" android:keyLabel="ח" android:keyOutputText="ח"/>
+        <Key android:codes="75" android:keyLabel="ל" android:keyOutputText="ל"/>
+        <Key android:codes="76" android:keyLabel="ך" android:keyOutputText="ך"/>
+        <Key android:codes="186" android:keyLabel="ף" android:keyOutputText="ף" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="90" android:keyLabel="ז" android:keyOutputText="ז" android:keyEdgeFlags="left"/>
+        <Key android:codes="88" android:keyLabel="ס" android:keyOutputText="ס"/>
+        <Key android:codes="67" android:keyLabel="ב" android:keyOutputText="ב"/>
+        <Key android:codes="86" android:keyLabel="ה" android:keyOutputText="ה"/>
+        <Key android:codes="66" android:keyLabel="נ" android:keyOutputText="נ"/>
+        <Key android:codes="78" android:keyLabel="מ" android:keyOutputText="מ"/>
+        <Key android:codes="77" android:keyLabel="צ" android:keyOutputText="צ"/>
+        <Key android:codes="188" android:keyLabel="ת" android:keyOutputText="ת"/>
+        <Key android:codes="190" android:keyLabel="ץ" android:keyOutputText="ץ" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="-5"
+            android:keyLabel="מחק"
+            android:keyWidth="30%p"
+            android:keyOutputText="מחק"
+            android:keyEdgeFlags="right"
+            android:isRepeatable="true"/>
+        <Key android:codes="32"
+            android:keyLabel="רווח"
+            android:keyOutputText="רווח"
+            android:keyWidth="60%p"
+            android:keyEdgeFlags="left"
+            android:isRepeatable="true"/>
+    </Row>
+</Keyboard>
