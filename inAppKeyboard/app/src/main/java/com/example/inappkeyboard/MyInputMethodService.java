@@ -20,6 +20,11 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class MyInputMethodService extends InputMethodService implements KeyboardView.OnKeyboardActionListener{
@@ -74,7 +79,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         }
 
     @Override
-    public void onText(CharSequence charSequence) {
+    public void onText(CharSequence charSequence){
         InputConnection inputConnection = getCurrentInputConnection();
 
         if (inputConnection != null) {
@@ -190,7 +195,13 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 case "רווח":
                     inputConnection.commitText(" ",1);
                     // TODO: Check the `concatInputValue` if equals to an inappropriate word and then reset it
-                    checkIfBadWord();
+                    //checkIfBadWord();
+                    try{
+                        checkIfWordAppears();
+                    }
+                    catch (Exception ex){
+                        //throw new Exception("File Not Found!");
+                    }
                     //testAlert();
                     this.concatInputValue ="";
                     break;
@@ -259,6 +270,52 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         params.x=0;
         params.y=0;
         windowManager2.addView(view, params);
+    }
+
+
+    private void checkIfWordAppears () throws Exception {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("words.csv")));
+            String csvfileString = this.getApplicationInfo().dataDir + File.separatorChar + "words.csv";
+            FileReader csvfile = new FileReader(csvfileString);
+
+
+
+            String row = "";
+            BufferedReader csvReader = new BufferedReader(new FileReader(getAssets().open("words.csv")));
+            while ((row = csvReader.readLine()) != null) {
+                String[] data = row.split(",");
+                // do something with the data
+
+            }
+            csvReader.close();
+        }
+        catch (Exception ex){
+            throw new Exception("File Not Found!");
+        }
+
+//        BufferedReader reader = null;
+//        try {
+//            reader = new BufferedReader(
+//                    new InputStreamReader(getAssets().open("words.csv"), "UTF-8"));
+//
+//            // do reading, usually loop until end of file reading
+//            String mLine;
+//            while ((mLine = reader.readLine()) != null) {
+//                //process line
+//
+//            }
+//        } catch (IOException e) {
+//            //log the exception
+//        } finally {
+//            if (reader != null) {
+//                try {
+//                    reader.close();
+//                } catch (IOException e) {
+//                    //log the exception
+//                }
+//            }
+//        }
     }
 
 
